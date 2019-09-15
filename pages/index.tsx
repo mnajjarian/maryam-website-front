@@ -1,3 +1,13 @@
-const IndexPage = () => <h1>Hello Next</h1>
+import Layout from "../components/Layout";
 
-export default IndexPage
+const App = () => {
+  return (
+    <div>
+      <Layout>
+        <p>Hello Next</p>
+      </Layout>
+    </div>
+  );
+};
+
+export default App;
