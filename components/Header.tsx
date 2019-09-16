@@ -1,21 +1,15 @@
-import Meta from "./meta";
 import Navbar from "./Navbar";
-
-const linkStyle = {
-  marginRight: 15
-};
 
 const Header = () => {
   return (
     <div>
-      <Meta />
       <div className="header">
         <header>
           <div className="header__content">
             <h1>
               <a href="/">maryam tavakkoli</a>
             </h1>
-            <span>cloud computing</span>
+            <span>cloud engineer</span>
           </div>
         </header>
         <Navbar />

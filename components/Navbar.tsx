@@ -2,7 +2,6 @@ import * as React from "react";
 import Link from "next/link";
 
 const Navbar = () => {
-  const [fixed, setFixed] = React.useState("");
   React.useEffect(() => {
     const header = document.getElementById("myHeader");
     const sticky = header.offsetTop;
@@ -18,19 +17,30 @@ const Navbar = () => {
     };
   }, []);
   return (
-    <nav id="myHeader">
-      <ul>
-        <Link href="/">
-          <a>Home</a>
-        </Link>
-        <Link href="/about">
-          <a>About Me</a>
-        </Link>
-        <Link href="/contact">
-          <a>Contact Me</a>
-        </Link>
-      </ul>
+    <div className="nav__wrapper">
+      <nav id="myHeader">
+        <ul>
+          <Link href="/">
+            <a>home</a>
+          </Link>
+          <Link href="/about">
+            <a>about me</a>
+          </Link>
+          <Link href="/contact">
+            <a>poblications</a>
+          </Link>
+          <Link href="/contact">
+            <a>contact me</a>
+          </Link>
+          <Link href="/contact">
+            <a>research blog</a>
+          </Link>
+        </ul>
+      </nav>
       <style jsx>{`
+        .nav__wrapper {
+          height: 50px;
+        }
         .sticky {
           position: fixed;
           top: 0;
@@ -38,26 +48,39 @@ const Navbar = () => {
         nav {
           display: flex;
           align-items: center;
+        
           width: 100%;
           height: 50px;
-          background-color: #092c59;
+          background: #4b6cb7;
+          background: -webkit-linear-gradient(to right, #182848, #4b6cb7);
+          background: linear-gradient(to right, #182848, #4b6cb7);
         }
         nav > ul {
           display: flex;
           align-items: center;
-          //padding: 0;
+          
         }
         a {
           text-decoration: none;
+          text-transform: capitalize;
           color: white;
           padding: 8px 16px;
           font-size: 1rem;
         }
         a:hover {
-          color: #dfcfba;
+          color: #d1cc73;
+        }
+        @media (max-width: 768px) {
+          nav {
+            justify-content
+          }
+          nav > ul {
+            padding: 0;
+          }
+          
         }
       `}</style>
-    </nav>
+    </div>
   );
 };
 

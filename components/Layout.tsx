@@ -1,15 +1,13 @@
+import Meta from "../components/Meta";
 import Header from "./Header";
-
-const layoutStyle = {
-  margin: "0 auto",
-  padding: 0,
-  border: "1px solid #DDD"
-};
+import Footer from "./Footer";
 
 const Layout = props => (
   <div>
+    <Meta />
     <Header />
     {props.children}
+    <Footer />
   </div>
 );
 
