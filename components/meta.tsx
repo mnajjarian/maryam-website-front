@@ -7,15 +7,19 @@ export default () => (
       <meta charSet="utf-8" />
     </Head>
     <style jsx global>{`
-      * {
+      *,
+      *:before,
+      *:after {
         box-sizing: border-box;
-        margin: 0;
-        padding: 0;
       }
       body {
+        margin: 0;
+        padding: 0;
         background: #000;
-        font: 11px menlo;
         color: #fff;
+        height: 100vh;
+        font-size: 10px;
+        font-family: Arial, Helvetica, sans-serif;
       }
     `}</style>
   </div>

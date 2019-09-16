@@ -1,10 +1,13 @@
 import Layout from "../components/Layout";
+import Biography from "../components/Biography";
+import Article from "../components/Article";
 
 const App = () => {
   return (
     <div>
       <Layout>
-        <p>Hello Next</p>
+        <Biography />
+        <Article />
       </Layout>
     </div>
   );
