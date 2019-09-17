@@ -13,6 +13,8 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
+    "export": "next export",
+    "deploy": "next build && next export",
     "start": "next start",
     "test": "jest",
     "test:watch": "jest -watch",
