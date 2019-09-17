@@ -12,10 +12,8 @@
   },
   "scripts": {
     "dev": "next",
-    "build": "next build",
-    "export": "next export",
-    "deploy": "next build && next export",
-    "start": "next start",
+    "build": "next build && next export",
+    "start": "serve ./out",
     "test": "jest",
     "test:watch": "jest -watch",
     "test:coverage": "jest -coverage",
