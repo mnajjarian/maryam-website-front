@@ -35,7 +35,7 @@ const Biography = () => (
         display: flex;
         justify-content: center;
         align-items: center;
-        //height: 100%;
+        width: 100%;
         min-height: 100vh;
         color: #292b5c;
       }
@@ -46,15 +46,12 @@ const Biography = () => (
         padding: 40px;
       }
       .biography__content {
-        //width: 40%;
+        width: 40%;
       }
       .biography__content > h2 {
         font-size: 1.8rem;
         font-weight: 300;
         text-transform: capitalize;
-      }
-      .biography__text {
-        width: 460px;
       }
       .biography__text > p {
         word-wrap: break-word;
@@ -94,6 +91,16 @@ const Biography = () => (
       }
       .biography__button:hover a {
         color: #d1cc73;
+      }
+      @media (max-width: 768px) {
+        .biography {
+          flex-direction: column;
+        }
+        .biography__content {
+          width: 100%;
+          margin: 0 auto;
+          padding: 20px;
+        }
       }
     `}</style>
   </section>

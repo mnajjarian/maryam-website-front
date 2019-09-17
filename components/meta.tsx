@@ -4,11 +4,7 @@ export default () => (
   <div>
     <Head>
       <title>Maryam Tavakkoli</title>
-      <meta
-        name="viewport"
-        content="initial-scale=1.0, width=device-width"
-        key="viewport"
-      />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta charSet="utf-8" />
       <link
         href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"

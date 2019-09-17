@@ -52,6 +52,14 @@ const Header = () => {
           letter-spacing: 0.1em;
           cursor: pointer;
         }
+        @media (max-width: 768px) {
+          header {
+            height: 300px;
+          }
+          h1 > a {
+            font-size: 1.5rem;
+          }
+        }
       `}</style>
     </div>
   );
