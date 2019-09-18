@@ -1,4 +1,4 @@
-import Meta from "./Meta";
+import Meta from "./meta";
 import Header from "./Header";
 import Footer from "./Footer";
 
