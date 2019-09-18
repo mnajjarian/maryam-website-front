@@ -2,7 +2,7 @@ import Layout from "../components/Layout";
 import Biography from "../components/Biography";
 import Article from "../components/Article";
 
-const App = () => {
+const Index = () => {
   return (
     <Layout>
       <Biography />
@@ -11,4 +11,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Index;
