@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-export default = () => (
+const Meta = () => (
   <div>
     <Head>
       <title>Maryam Tavakkoli</title>
@@ -29,3 +29,5 @@ export default = () => (
     `}</style>
   </div>
 );
+
+export default Meta;
