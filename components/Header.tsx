@@ -12,9 +12,14 @@ const Header = () => {
             <span>cloud engineer</span>
           </div>
         </header>
-        <Navbar />
+        <div className="nav__wrapper">
+          <Navbar />
+        </div>
       </div>
       <style jsx>{`
+        .nav__wrapper {
+          height: 50px;
+        }
         header {
           display: flex;
           align-items: center;
@@ -53,6 +58,9 @@ const Header = () => {
           cursor: pointer;
         }
         @media (max-width: 768px) {
+          .nav__wrapper {
+            height: 0px;
+          }
           header {
             height: 300px;
           }

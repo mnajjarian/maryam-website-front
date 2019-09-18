@@ -3,84 +3,82 @@ import classNames from "classnames";
 import Link from "next/link";
 
 const Nav = ({ toggle }) => (
-  <div className="nav__wrapper">
-    <nav
-      id="myHeader"
-      className={classNames({
-        nav__wrapper: true,
-        show: !toggle
-      })}
-    >
-      <ul>
-        <Link href="/">
-          <a>home</a>
-        </Link>
-        <Link href="/about">
-          <a>about me</a>
-        </Link>
-        <Link href="/contact">
-          <a>poblications</a>
-        </Link>
-        <Link href="/contact">
-          <a>contact me</a>
-        </Link>
-        <Link href="/contact">
-          <a>Blog</a>
-        </Link>
-      </ul>
-      <style jsx>{`
+  <nav
+    id="myHeader"
+    className={classNames({
+      nav__wrapper: true,
+      show: !toggle
+    })}
+  >
+    <ul>
+      <Link href="/">
+        <a>home</a>
+      </Link>
+      <Link href="/about">
+        <a>about me</a>
+      </Link>
+      <Link href="/contact">
+        <a>poblications</a>
+      </Link>
+      <Link href="/contact">
+        <a>contact me</a>
+      </Link>
+      <Link href="/contact">
+        <a>Blog</a>
+      </Link>
+    </ul>
+    <style jsx>{`
+      .sticky {
+        position: fixed;
+        top: 0;
+      }
+      nav {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 50px;
+        background: #4b6cb7;
+        background: -webkit-linear-gradient(to right, #182848, #4b6cb7);
+        background: linear-gradient(to right, #182848, #4b6cb7);
+      }
+      nav > ul {
+        display: flex;
+        align-items: center;
+      }
+      a {
+        text-decoration: none;
+        text-transform: capitalize;
+        color: white;
+        padding: 8px 16px;
+        font-size: 1rem;
+      }
+      a:hover {
+        color: #d1cc73;
+      }
+      @media (max-width: 768px) {
+        .show {
+          display: none;
+        }
         .sticky {
-          position: fixed;
-          top: 0;
+          display: none;
         }
         nav {
-          display: flex;
-          align-items: center;
-          width: 100%;
-          height: 50px;
-          background: #4b6cb7;
-          background: -webkit-linear-gradient(to right, #182848, #4b6cb7);
-          background: linear-gradient(to right, #182848, #4b6cb7);
+          justify-content: center;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 30%;
+          height: 300px;
         }
-        nav > ul {
-          display: flex;
-          align-items: center;
-        }
-        a {
-          text-decoration: none;
-          text-transform: capitalize;
-          color: white;
-          padding: 8px 16px;
-          font-size: 1rem;
-        }
-        a:hover {
-          color: #d1cc73;
-        }
-        @media (max-width: 768px) {
-          .show {
-            display: none;
-          }
-          .sticky {
-            display: none;
-          }
-          nav {
-            justify-content: center;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 30%;
-            height: 300px;
-          }
 
-          nav > ul {
-            padding: 0;
-            flex-direction: column;
-            align-items: flex-start;
-          }
+        nav > ul {
+          padding: 0;
+          flex-direction: column;
+          align-items: flex-start;
         }
-      `}</style>
-    </nav>
-  </div>
+      }
+    `}</style>
+  </nav>
 );
 const Navbar = () => {
   const [toggle, setToggle] = React.useState(false);
