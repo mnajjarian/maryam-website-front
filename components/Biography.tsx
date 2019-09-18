@@ -14,10 +14,7 @@ const Biography = () => (
             University in Finland, and TU Delft in the Netherlands. Currently, I
             am working at Nokia Bell Labs, in Finland, as a thesis writer. In
             this position, I am conducting a research study on containerizing of
-            a current telco IoT publish/subscribe application, and suitability
-            of Kubernetes to be used for its deployment. Docker, Kubernetes,
-            Nokia’s cloud environment (NESC), Apache Kafka and GIT are
-            technologies and tools which I am using during my work in Nokia.
+            a current telco IoT publish/subscribe application...
           </p>
         </div>
         <div className="biography__button">

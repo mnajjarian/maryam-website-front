@@ -17,7 +17,7 @@ const Nav = ({ toggle }) => (
       <Link href="/about">
         <a>about me</a>
       </Link>
-      <Link href="/contact">
+      <Link href="/publication">
         <a>poblications</a>
       </Link>
       <Link href="/contact">
