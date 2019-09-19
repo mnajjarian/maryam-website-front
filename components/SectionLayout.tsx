@@ -49,13 +49,6 @@ const SectionLayout = (props: Props) => (
         font-weight: 300;
         text-transform: capitalize;
       }
-      p {
-        word-wrap: break-word;
-        overflow-wrap: break-word;
-        font-size: 1rem;
-        color: #27223e;
-        line-height: 1.5rem;
-      }
       span {
         display: block;
         width: 116px;

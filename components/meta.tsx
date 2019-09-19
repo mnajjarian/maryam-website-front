@@ -31,6 +31,12 @@ const Meta = () => (
         font-size: 10px;
         font-family: "Open Sans", sans-serif;
       }
+      p {
+        font-size: 1rem;
+        line-height: 1.7rem;
+        word-wrap: break-word;
+        color: var(--main-dark-color);
+      }
     `}</style>
   </div>
 );
