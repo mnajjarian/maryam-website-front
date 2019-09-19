@@ -6,7 +6,6 @@ const Index = () => {
   return (
     <Layout>
       <Biography />
-      <Article />
     </Layout>
   );
 };

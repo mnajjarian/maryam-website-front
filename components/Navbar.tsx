@@ -18,9 +18,6 @@ const Nav = ({ toggle }) => (
         <Link href="/about#section">
           <a>about me</a>
         </Link>
-        <Link href="/contact">
-          <a>Blog</a>
-        </Link>
       </ul>
       <style jsx>{`
         .sticky {
