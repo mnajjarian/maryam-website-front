@@ -17,6 +17,11 @@ const Meta = () => (
       *:after {
         box-sizing: border-box;
       }
+      :root {
+        --main-bg-color: #4b6cb7;
+        --main-dark-color: #292b5c;
+        --light-french: #d1b873;
+      }
       body {
         margin: 0;
         padding: 0;

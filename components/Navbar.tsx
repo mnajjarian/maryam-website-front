@@ -127,17 +127,19 @@ const Navbar = () => {
         .menu__button > div {
           width: 35px;
           height: 5px;
-          background-color: black;
+          background-color: white;
           margin: 6px 0;
           transition: 0.4s;
         }
         .change > :nth-child(1) {
+          background-color: var(--light-french);
           transform: rotate(-45deg) translate(-9px, 6px);
         }
         .change > :nth-child(2) {
           opacity: 0;
         }
         .change > :nth-child(3) {
+          background-color: var(--light-french);
           transform: rotate(45deg) translate(-8px, -8px);
         }
         @media (max-width: 768px) {

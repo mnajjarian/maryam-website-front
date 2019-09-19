@@ -26,7 +26,7 @@ const Header = () => {
           justify-content: center;
           width: 100%;
           height: 440px;
-          background: #4b6cb7;
+          background: var(--main-bg-color);
           background-image: url("../static/images/header2.jpeg");
           background-position: center;
           background-repeat: no-repeat;
@@ -37,7 +37,7 @@ const Header = () => {
           flex-direction: column;
           justify-content: center;
           align-items: center;
-          color: #292b5c;
+          color: var(--main-dark-color);
         }
         .header__content > h1 {
           margin: 0;
@@ -48,7 +48,7 @@ const Header = () => {
           font: italic normal normal 45px/1.4em "times new roman", times, serif;
           font-weight: 600;
           text-transform: capitalize;
-          color: #292b5c;
+          color: var(--main-dark-color);
         }
         .header__content > span {
           padding: 0;

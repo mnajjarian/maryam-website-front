@@ -33,7 +33,7 @@ const SectionLayout = (props: Props) => (
         align-items: center;
         width: 100%;
         min-height: 100vh;
-        color: #292b5c;
+        color: var(--main-dark-color);
       }
       img {
         height: 400px;
@@ -66,8 +66,8 @@ const SectionLayout = (props: Props) => (
         height: 40px;
         min-height: 19px;
         width: 142px;
-        border: 2px solid #27223e;
-        color: #27223e;
+        border: 2px solid var(--main-dark-color);
+        color: var(--main-dark-color);
         padding: 4px 12px;
         font-size: 0.7rem;
         cursor: pointer;
@@ -83,10 +83,10 @@ const SectionLayout = (props: Props) => (
         color: initial;
       }
       .section__button:hover {
-        border-color: #d1cc73;
+        border-color: var(--light-french);
       }
       .section__button:hover a {
-        color: #d1cc73;
+        color: var(--light-french);
       }
       @media (max-width: 768px) {
         .section {
