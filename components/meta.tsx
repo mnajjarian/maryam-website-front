@@ -21,6 +21,7 @@ const Meta = () => (
         --main-bg-color: #4b6cb7;
         --main-dark-color: #292b5c;
         --light-french: #d1b873;
+        --blog-bg-color: #ff8300;
       }
       body {
         margin: 0;
@@ -36,6 +37,11 @@ const Meta = () => (
         line-height: 1.7rem;
         word-wrap: break-word;
         color: var(--main-dark-color);
+      }
+      h2 {
+        font-size: 1.8rem;
+        font-weight: 300;
+        text-transform: capitalize;
       }
     `}</style>
   </div>

@@ -44,11 +44,7 @@ const SectionLayout = (props: Props) => (
       .section__content {
         width: 40%;
       }
-      h2 {
-        font-size: 1.8rem;
-        font-weight: 300;
-        text-transform: capitalize;
-      }
+
       span {
         display: block;
         width: 116px;
