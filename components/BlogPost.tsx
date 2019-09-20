@@ -1,3 +1,6 @@
+import Link from "next/link";
+import Post from "./Post";
+
 type Props = {
   posts: {
     id: string;
@@ -9,55 +12,18 @@ type Props = {
     createdAt: string;
   }[];
 };
+
 const BlogPost = (props: Props) => {
   const { posts } = props;
-  const formatDate = date =>
-    new Intl.DateTimeFormat("en-us", {
-      year: "numeric",
-      month: "short",
-      day: "2-digit"
-    }).format(new Date(date));
+
   return (
     <div className="blog__post">
       <div className="blog__aside">
-        <aside>hh</aside>
+        <aside></aside>
       </div>
       <div className="blog__posts">
-        {posts.map(p => (
-          <section>
-            <div className="post__content">
-              <h2>{p.title}</h2>
-              <div className="post__header">
-                <span className="header__icon">
-                  <img src="../static/icons/time-3.svg" alt="clock icon" />
-                  <strong>
-                    <time dateTime="2019-09-12" itemProp={p.createdAt}>
-                      {formatDate(p.createdAt)}
-                    </time>
-                  </strong>
-                </span>
-                <span className="header__icon">
-                  <img src="../static/icons/user.svg" alt="user icon" />
-                  <strong>{p.author}</strong>
-                </span>
-                <span className="header__icon">
-                  <img src="../static/icons/bubble.svg" alt="comment icon" />
-                  <strong>3</strong>
-                </span>
-              </div>
-
-              <p>{p.text[0]}</p>
-              <span>
-                Tags:{" "}
-                {p.tags.map(tag => (
-                  <strong>
-                    <a href="/">{tag}</a>,
-                  </strong>
-                ))}
-              </span>
-            </div>
-            <img src={p.imgUrl} alt={p.title} />
-          </section>
+        {posts.map(post => (
+          <Post post={post} key={post.id} />
         ))}
       </div>
       <style jsx>{`
@@ -82,13 +48,17 @@ const BlogPost = (props: Props) => {
           display: flex;
           justify-content: center;
           align-items: center;
-          padding: 20px 50px;
+          padding: 50px 20px;
           border-bottom: 1px solid #ffbb73;
         }
-        img {
+        .blog__items {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .blog__items > img {
           width: 300px;
           height: 200px;
-          padding-left: 10px;
         }
 
         h2 {
@@ -110,13 +80,13 @@ const BlogPost = (props: Props) => {
         }
         .header__icon {
           display: flex;
-          //justify-content: center;
+          justify-content: center;
           align-items: center;
           margin-right: 8px;
         }
         .header__icon > img {
-          height: 25px;
-          width: 25px;
+          height: 15px;
+          width: 15px;
         }
       `}</style>
     </div>

@@ -27,7 +27,7 @@ const Nav = (props: NavProps) => {
       >
         <ul>
           {links.map(link => (
-            <Link href={link.href}>
+            <Link href={link.href} key={link.title}>
               <a>{link.title}</a>
             </Link>
           ))}

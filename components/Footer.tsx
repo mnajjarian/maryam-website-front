@@ -28,7 +28,7 @@ const Footer = () => (
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        min-height: 30vh;
+        height: 200px;
         background: #000046;
         background: -webkit-linear-gradient(to right, #1cb5e0, #000046);
         background: linear-gradient(to right, #1cb5e0, #000046);
