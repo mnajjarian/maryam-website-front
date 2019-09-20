@@ -2,81 +2,92 @@ import * as React from "react";
 import classNames from "classnames";
 import Link from "next/link";
 
-const Nav = ({ toggle }) => (
-  <div id="section">
-    <nav
-      id="myHeader"
-      className={classNames({
-        nav__wrapper: true,
-        show: !toggle
-      })}
-    >
-      <ul>
-        <Link href="/">
-          <a>home</a>
-        </Link>
-        <Link href="/about#section">
-          <a>about me</a>
-        </Link>
-        <Link href="/blog">
-          <a>Blog</a>
-        </Link>
-      </ul>
-      <style jsx>{`
-        .sticky {
-          position: fixed;
-          top: 0;
-        }
-        nav {
-          display: flex;
-          align-items: center;
-          width: 100%;
-          height: 50px;
-          background: #4b6cb7;
-          background: -webkit-linear-gradient(to right, #182848, #4b6cb7);
-          background: linear-gradient(to right, #182848, #4b6cb7);
-        }
-        nav > ul {
-          display: flex;
-          align-items: center;
-        }
-        a {
-          text-decoration: none;
-          text-transform: capitalize;
-          color: white;
-          padding: 8px 16px;
-          font-size: 1rem;
-        }
-        a:hover {
-          color: #d1cc73;
-        }
-        @media (max-width: 768px) {
-          .show {
-            display: none;
-          }
+type LinkType = {
+  title: string;
+  href: string;
+};
+type NavbarProps = {
+  links: LinkType[];
+};
+
+type NavProps = {
+  links: LinkType[];
+  toggle: boolean;
+};
+const Nav = (props: NavProps) => {
+  const { toggle, links } = props;
+  return (
+    <div id="section">
+      <nav
+        id="myHeader"
+        className={classNames({
+          nav__wrapper: true,
+          show: !toggle
+        })}
+      >
+        <ul>
+          {links.map(link => (
+            <Link href={link.href}>
+              <a>{link.title}</a>
+            </Link>
+          ))}
+        </ul>
+        <style jsx>{`
           .sticky {
-            display: none;
+            position: fixed;
+            top: 0;
           }
           nav {
-            justify-content: center;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 30%;
-            height: 300px;
+            display: flex;
+            align-items: center;
+            width: 100%;
+            height: 50px;
+            background: #4b6cb7;
+            background: -webkit-linear-gradient(to right, #182848, #4b6cb7);
+            background: linear-gradient(to right, #182848, #4b6cb7);
           }
-
           nav > ul {
-            padding: 0;
-            flex-direction: column;
-            align-items: flex-start;
+            display: flex;
+            align-items: center;
           }
-        }
-      `}</style>
-    </nav>
-  </div>
-);
-const Navbar = () => {
+          a {
+            text-decoration: none;
+            text-transform: capitalize;
+            color: white;
+            padding: 8px 16px;
+            font-size: 1rem;
+          }
+          a:hover {
+            color: #d1cc73;
+          }
+          @media (max-width: 768px) {
+            .show {
+              display: none;
+            }
+            .sticky {
+              display: none;
+            }
+            nav {
+              justify-content: center;
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 30%;
+              height: 300px;
+            }
+
+            nav > ul {
+              padding: 0;
+              flex-direction: column;
+              align-items: flex-start;
+            }
+          }
+        `}</style>
+      </nav>
+    </div>
+  );
+};
+const Navbar = (props: NavbarProps) => {
   const [toggle, setToggle] = React.useState(false);
   React.useEffect(() => {
     const header = document.getElementById("myHeader");
@@ -94,7 +105,7 @@ const Navbar = () => {
   }, []);
   return (
     <div>
-      <Nav toggle={toggle} />
+      <Nav toggle={toggle} links={props.links} />
       <div
         className={classNames({
           menu__button: true,

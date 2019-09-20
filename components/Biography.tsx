@@ -1,10 +1,19 @@
 import SectionLayout from "./SectionLayout";
 
+type Props = {
+  title: string;
+  btnText: string;
+  href: string;
+  flextDirection: string;
+  imgUrl: string;
+  imgRadius: string;
+  text: string[];
+};
 const Biography = () => (
   <SectionLayout
     imgUrl="../static/images/bio-image.jpg"
     title="maryam tavakkoli"
-    href="/about"
+    href="/about-me"
     btnText="read more"
     flexDirect="row"
     borderRadius="50%"

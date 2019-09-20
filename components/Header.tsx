@@ -1,5 +1,6 @@
 import Navbar from "./Navbar";
 
+const links = [{ title: "blog", href: "/" }];
 const Header = () => {
   return (
     <div>
@@ -13,7 +14,7 @@ const Header = () => {
           </div>
         </header>
         <div className="nav__wrapper">
-          <Navbar />
+          <Navbar links={links} />
         </div>
       </div>
       <style jsx>{`
