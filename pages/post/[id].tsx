@@ -10,8 +10,11 @@ export default function() {
   const {
     query: { id }
   } = router;
+  if (!id) {
+    return <div></div>;
+  }
   const { posts } = db;
-  const title = id
+  const title: string = id
     .toString()
     .split("-")
     .join(" ");
