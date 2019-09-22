@@ -1,11 +1,20 @@
 import Link from "next/link";
+import { string } from "prop-types";
+
+type Paragraph = {
+  title: string;
+  text: string[];
+};
 
 type PostProps = {
   post: {
     id: string;
     author: string;
+    authorImg: string;
+    authorBio: string;
     title: string;
-    text: Array<string>;
+    shortDescription: string;
+    paragraph: Paragraph[];
     imgUrl: string;
     tags: string[];
     createdAt: string;
@@ -44,7 +53,7 @@ const Post = (props: PostProps) => {
         </div>
         <div className="blog__items">
           <p>
-            {post.text[0].substring(0, 380)}...
+            {post.paragraph[0].text[0].substring(0, 380)}...
             <Link
               href="/post/[id]"
               as={`/post/${post.title.split(" ").join("-")}`}
@@ -69,6 +78,8 @@ const Post = (props: PostProps) => {
           justify-content: center;
           align-items: center;
           padding: 50px 20px;
+        }
+        section:not(:last-of-type) {
           border-bottom: 1px solid #ffbb73;
         }
         .blog__items {
