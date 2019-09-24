@@ -115,12 +115,10 @@ const Post = (props: PostProps) => {
           display: flex;
           list-style: none;
           margin: 0;
-          overflow: hidden;
           padding: 0;
+          flex-wrap: wrap;
         }
-        .tags li {
-          float: left;
-        }
+
         .tags li > a {
           background-color: #eee;
           border-radius: 3px 0 0 3px;
@@ -178,7 +176,7 @@ const Post = (props: PostProps) => {
           align-items: center;
           margin-right: 8px;
         }
-      
+
         .header__icon > img {
           height: 15px;
           width: 15px;
@@ -199,7 +197,8 @@ const Post = (props: PostProps) => {
         }
         @media (max-width: 768px) {
           .header__icon {
-            font-size: .6rem;
+            font-size: 0.6rem;
+          }
         }
       `}</style>
     </section>

@@ -7,19 +7,17 @@ const links = [
 ];
 const Header = () => {
   return (
-    <div>
-      <div className="header">
-        <header>
-          <div className="header__content">
-            <h1>
-              <a href="/">maryam tavakkoli</a>
-            </h1>
-            <span>cloud engineer</span>
-          </div>
-        </header>
-        <div className="nav__wrapper">
-          <Navbar links={links} />
+    <div className="header">
+      <header>
+        <div className="header__content">
+          <h1>
+            <a href="/">maryam tavakkoli</a>
+          </h1>
+          <span>cloud engineer</span>
         </div>
+      </header>
+      <div className="nav__wrapper">
+        <Navbar links={links} />
       </div>
       <style jsx>{`
         .nav__wrapper {

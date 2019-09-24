@@ -10,7 +10,7 @@ type Props = {
   borderRadius: string;
 };
 const SectionLayout = (props: Props) => (
-  <section className="section">
+  <section>
     <img src={props.imgUrl} />
     <div className="section__content">
       <h2>{props.title}</h2>
@@ -25,8 +25,6 @@ const SectionLayout = (props: Props) => (
         background: url("../static/images/Light-blue.jpg") no-repeat center
           center fixed;
         background-size: cover;
-      }
-      .section {
         display: flex;
         flex-direction: ${props.flexDirect};
         justify-content: center;
@@ -44,9 +42,14 @@ const SectionLayout = (props: Props) => (
       .section__content {
         width: 40%;
       }
+      .section__content > h2 {
+        margin: 0;
+        text-transform: capitalize;
+      }
 
-      span {
+      .section__content > span {
         display: block;
+        margin-bottom: 10px;
         width: 116px;
         height: 5px;
         border-top: 2px solid rgba(39, 34, 62, 1);

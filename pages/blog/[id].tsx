@@ -29,7 +29,10 @@ export default function() {
   return (
     <main>
       <Meta />
-      <Navbar links={links} />
+      <div className="nav__wrapper">
+        <Navbar links={links} />
+      </div>
+
       <section className="post">
         <header>
           <div className="post__date">
@@ -135,6 +138,9 @@ export default function() {
       </div>
       <Footer />
       <style jsx>{`
+        .nav__wrapper {
+          height: 50px;
+        }
         main {
           background-color: #f9f9f9;
         }
@@ -281,17 +287,17 @@ export default function() {
         }
 
         .related__posts > h2 {
-          margin: 0;
+          margin: .25rem;
         }
 
         .related__posts > span {
-          margin: 0 auto;
+          margin: 0 auto 1rem auto;
           display: block;
           width: 350px;
           height: 5px;
-          border-bottom: 2px solid var(--main-dark-color);
+          border-top: 2px solid var(--main-dark-color);
         }
-      
+        
         .card__wrapper {
           display: flex;
           justify-content: center;
