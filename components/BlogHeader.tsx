@@ -31,9 +31,7 @@ const BlogHeader = (props: Props) => {
             }).format(new Date(createdAt))}
           </span>
         </div>
-        <div className="header__img">
-          <img src="../static/images/tech-image.jpg" alt="tech" />
-        </div>
+        <img src="../static/images/tech-image.jpg" alt="tech" />
       </div>
       <style jsx>{`
         .blog__header {
@@ -52,7 +50,7 @@ const BlogHeader = (props: Props) => {
           display: flex;
           flex-direction: column;
           margin-right: 20px;
-          width: 50%;
+          //width: 50%;
         }
         h2 > a {
           text-transform: capitalize;
@@ -62,15 +60,34 @@ const BlogHeader = (props: Props) => {
           text-decoration: none;
         }
 
-        .header__img {
+        .header__top {
           display: flex;
-          justify-content: center;
-          align-items: center;
-          width: 50%;
+          justify-content: space-between;
+          //align-items: center;
+          width: 100%;
         }
         img {
           width: 100%;
           height: 350px;
+        }
+        @media (max-width: 768px) {
+          .blog__header {
+            height: 100vh;
+          }
+          .header__content {
+            flex-direction: column-reverse;
+            justify-content: space-around;
+          }
+          .header__img {
+            width: 100%;
+            //padding-bottom: 10px;
+          }
+          img {
+            height: 200px;
+          }
+          .header__items {
+            width: 100%;
+          }
         }
       `}</style>
     </div>

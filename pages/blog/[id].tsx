@@ -93,33 +93,46 @@ export default function() {
           <div className="social__share">
             <span>Share the blog post</span>
             <div className="social__buttons">
-              <a onClick={handleClick}>
-                <img
-                  src="../../static/icons/facebook-2.svg"
-                  alt="facebook icon"
-                />
-              </a>
-              <a href="/">
-                <img
-                  src="../../static/icons/inkedin-2.svg"
-                  alt="linkedin icon"
-                />
-              </a>
-              <a href="/">
-                <img
-                  src="../../static/icons/twitter-2.svg"
-                  alt="twitter icon"
-                />
-              </a>
+              <div className="facebook__icon"></div>
+              <div className="linkedin__icon"></div>
+              <div className="twitter__icon"></div>
             </div>
             <div className="blog__spc"></div>
           </div>
         </footer>
       </section>
-      <section>
+      <div className="related__posts">
         <h2>Related blog posts</h2>
-        <div className="card__wrapper"></div>
-      </section>
+        <span></span>
+        <div className="card__wrapper">
+          <ul>
+            <li>
+              <img src={post.imgUrl} />
+              <p>{post.title}</p>
+            </li>
+            <li>
+              <img src={post.imgUrl} />
+              <p>{post.title}</p>
+            </li>
+            <li>
+              <img src={post.imgUrl} />
+              <p>{post.title}</p>
+            </li>
+            <li>
+              <img src={post.imgUrl} />
+              <p>{post.title}</p>
+            </li>
+            <li>
+              <img src={post.imgUrl} />
+              <p>{post.title}</p>
+            </li>
+            <li>
+              <img src={post.imgUrl} />
+              <p>{post.title}</p>
+            </li>
+          </ul>
+        </div>
+      </div>
       <Footer />
       <style jsx>{`
         main {
@@ -238,10 +251,81 @@ export default function() {
           vertical-align: middle;
         }
         .social__buttons {
-          display: inline;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding-top: .25rem;
         }
-        .social__buttons > a {
+        .facebook__icon, .linkedin__icon, .twitter__icon {
+          width: 50px;
+          height: 50px;
+          background-color: var(--main-bg-color);
+          cursor: pointer;
           margin: 0 .25rem;
+        }
+        .facebook__icon:hover, .linkedin__icon:hover, .twitter__icon:hover {
+          background-color: var(--main-dark-color);
+        }
+        .facebook__icon {
+          mask: url("../../static/icons/facebook-2.svg");
+        }
+        .linkedin__icon {
+          mask: url("../../static/icons/linkedin-2.svg");
+        }
+        .twitter__icon {
+          mask: url("../../static/icons/twitter-2.svg");
+        }
+
+        .related__posts {
+          text-align: center;
+        }
+
+        .related__posts > h2 {
+          margin: 0;
+        }
+
+        .related__posts > span {
+          margin: 0 auto;
+          display: block;
+          width: 350px;
+          height: 5px;
+          border-bottom: 2px solid var(--main-dark-color);
+        }
+      
+        .card__wrapper {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin: 0 .5rem .5rem .5rem;
+        }
+        .card__wrapper > ul {
+          display: flex;
+          justify-content: space-around;
+          aligh-items: center;
+          max-width: 100%;
+          list-style: none;
+          overflow-x: scroll;
+        }
+        .card__wrapper ul > li {
+          position: relative;
+          margin: 0 .25rem;
+          flex-shrink: 0;
+          border: 1px solid var(--main-bg-color);
+          border-radius: 5px;
+          height: 200px;
+          width: 300px;
+          cursor: pointer;
+          color: var(--light-french);
+        }
+        .card__wrapper ul > li > p {
+          position: absolute;
+          bottom: 0;
+        }
+        .card__wrapper ul > li > img {
+          height: 100%;
+        }
+        .card__wrapper ul > li:hover {
+          border: 5px solid var(--light-french);
         }
         h1 {
           font-size: 2.5rem;

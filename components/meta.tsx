@@ -69,6 +69,11 @@ const Meta = () => (
       }
       .spacer {
       }
+      @media (max-width: 768px) {
+        h2 {
+          font-size: 2rem;
+        }
+      }
     `}</style>
   </div>
 );

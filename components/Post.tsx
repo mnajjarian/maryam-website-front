@@ -65,7 +65,7 @@ const Post = (props: PostProps) => {
         </div>
         <span>
           <ul className="tags">
-            Tags:{" "}
+            Tags:
             {post.tags.map(tag => (
               <li key={tag}>
                 <a href="/">{tag}</a>
@@ -87,15 +87,14 @@ const Post = (props: PostProps) => {
         .blog__items {
           display: flex;
           justify-content: center;
-          align-items: center;
         }
         .blog__items > p {
           font-size: 1.1rem;
           line-height: 200%;
         }
         .blog__items > img {
-          width: 300px;
-          height: 200px;
+          width: 350px;
+          height: 100%;
         }
         p > a {
           text-decoration: none;
@@ -181,6 +180,19 @@ const Post = (props: PostProps) => {
         .header__icon > img {
           height: 15px;
           width: 15px;
+        }
+        @media (max-width: 768px) {
+          .post__content {
+            display: flex;
+            flex-direction: column;
+          }
+          .blog__items {
+            display: flex;
+            flex-direction: column-reverse;
+          }
+          .blog__items > img {
+            width: 100%;
+          }
         }
       `}</style>
     </section>
