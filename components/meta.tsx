@@ -71,7 +71,8 @@ const Meta = () => (
       }
       @media (max-width: 768px) {
         h2 {
-          font-size: 2rem;
+          font-size: 1.7rem;
+          margin-bottom: 0;
         }
       }
     `}</style>

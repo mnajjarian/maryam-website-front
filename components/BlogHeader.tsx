@@ -19,9 +19,7 @@ const BlogHeader = (props: Props) => {
     <div className="blog__header">
       <div className="header__content">
         <div className="header__items">
-          <h2>
-            <a href="/">{title}</a>
-          </h2>
+          <h2>{title}</h2>
           <p>{paragraph[0].text[0].substring(0, 350)}...</p>
           <span>
             {new Intl.DateTimeFormat("en-us", {
@@ -80,8 +78,8 @@ const BlogHeader = (props: Props) => {
           }
           .header__img {
             width: 100%;
-            //padding-bottom: 10px;
           }
+
           img {
             height: 200px;
           }

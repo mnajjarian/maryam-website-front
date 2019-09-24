@@ -80,6 +80,7 @@ const Post = (props: PostProps) => {
           justify-content: center;
           align-items: center;
           padding: 50px 20px;
+          width: 100%;
         }
         section:not(:last-of-type) {
           border-bottom: 1px solid #ffbb73;
@@ -177,6 +178,7 @@ const Post = (props: PostProps) => {
           align-items: center;
           margin-right: 8px;
         }
+      
         .header__icon > img {
           height: 15px;
           width: 15px;
@@ -185,6 +187,7 @@ const Post = (props: PostProps) => {
           .post__content {
             display: flex;
             flex-direction: column;
+            width: 100%;
           }
           .blog__items {
             display: flex;
@@ -193,6 +196,10 @@ const Post = (props: PostProps) => {
           .blog__items > img {
             width: 100%;
           }
+        }
+        @media (max-width: 768px) {
+          .header__icon {
+            font-size: .6rem;
         }
       `}</style>
     </section>

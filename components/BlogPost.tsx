@@ -43,6 +43,11 @@ const BlogPost = (props: Props) => {
           width: 70%;
           height: 100%;
         }
+        @media (max-width: 768px) {
+          .blog__posts {
+            width: 100%;
+          }
+        }
       `}</style>
     </div>
   );
