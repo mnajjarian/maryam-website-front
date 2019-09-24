@@ -50,6 +50,13 @@ const BlogHeader = (props: Props) => {
           margin-right: 20px;
           //width: 50%;
         }
+        .header__items > h2 {
+          margin: 0;
+        }
+        .header__items > p {
+          font-size: 1.1rem;
+          line-height: 200%;
+        }
         h2 > a {
           text-transform: capitalize;
           color: black;
