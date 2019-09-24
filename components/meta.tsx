@@ -34,10 +34,16 @@ const Meta = () => (
         line-height: 1.5;
         font-family: Lato, Sans-Serif;
       }
+      ::selection {
+        color: #fff;
+        background: #0b0500;
+        text-shadow: none;
+      }
       section {
         display: flex;
         flex-flow: column;
       }
+
       img {
         max-width: 100%;
         border: 0;

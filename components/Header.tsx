@@ -1,6 +1,10 @@
 import Navbar from "./Navbar";
 
-const links = [{ title: "blog", href: "/" }];
+const links = [
+  { title: "home", href: "/" },
+  { title: "about", href: "/about-me" },
+  { title: "blog", href: "/blog" }
+];
 const Header = () => {
   return (
     <div>

@@ -53,10 +53,10 @@ const Post = (props: PostProps) => {
         </div>
         <div className="blog__items">
           <p>
-            {post.paragraph[0].text[0].substring(0, 380)}...
+            {post.paragraph[0].text[0].substring(0, 380) + "... "}
             <Link
-              href="/post/[id]"
-              as={`/post/${post.title.split(" ").join("-")}`}
+              href="/blog/[id]"
+              as={`/blog/${post.title.split(" ").join("-")}`}
             >
               <a>read more</a>
             </Link>
@@ -64,12 +64,14 @@ const Post = (props: PostProps) => {
           <img src={post.imgUrl} alt={post.title} />
         </div>
         <span>
-          Tags:{" "}
-          {post.tags.map(tag => (
-            <strong key={tag}>
-              <a href="/">{tag}</a>,
-            </strong>
-          ))}
+          <ul className="tags">
+            Tags:{" "}
+            {post.tags.map(tag => (
+              <li key={tag}>
+                <a href="/">{tag}</a>
+              </li>
+            ))}
+          </ul>
         </span>
       </div>
       <style jsx>{`
@@ -87,16 +89,77 @@ const Post = (props: PostProps) => {
           justify-content: center;
           align-items: center;
         }
+        .blog__items > p {
+          font-size: 1.1rem;
+          line-height: 200%;
+        }
         .blog__items > img {
           width: 300px;
           height: 200px;
         }
-
+        p > a {
+          text-decoration: none;
+          font-size: 1.2rem;
+          color: var(--light-french);
+        }
+        p > a:hover {
+          color: #484848;
+        }
         h2 {
           color: black;
         }
         span {
           color: var(--dark-light);
+        }
+        .tags {
+          display: flex;
+          list-style: none;
+          margin: 0;
+          overflow: hidden;
+          padding: 0;
+        }
+        .tags li {
+          float: left;
+        }
+        .tags li > a {
+          background-color: #eee;
+          border-radius: 3px 0 0 3px;
+          color: #999;
+          display: inline-block;
+          height: 26px;
+          padding: 0 20px 0 23px;
+          position: relative;
+          margin: 0 10px 10px 0;
+          text-decoration: none;
+          -webkit-transition: color 0.2s;
+        }
+        .tags li > a:before {
+          position: absolute;
+          height: 6px;
+          width: 6px;
+          left: 10px;
+          top: 10px;
+          content: "";
+          background: #fff;
+          border-radius: 10px;
+          box-shadow: inset 0 1px rgba(0, 0, 0, 0.25);
+        }
+        .tags li > a:after {
+          position: absolute;
+          content: "";
+          right: 0;
+          top: 0;
+          background: #fff;
+          border-bottom: 13px solid transparent;
+          border-left: 10px solid #eee;
+          border-top: 13px solid transparent;
+        }
+        .tags li > a:hover {
+          background-color: crimson;
+          color: white;
+        }
+        .tags li > a:hover::after {
+          border-left-color: crimson;
         }
         strong {
           text-transform: capitalize;

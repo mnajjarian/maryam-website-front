@@ -4,6 +4,7 @@ import Post from "../../components/Post";
 import db from "../../db.json";
 import Navbar from "../../components/Navbar";
 import Meta from "../../components/meta";
+import Footer from "../../components/Footer";
 
 export default function() {
   const router = useRouter();
@@ -19,7 +20,7 @@ export default function() {
     .split("-")
     .join(" ");
   const post = posts.find(p => p.title === title);
-  const links = [{ title: "home", href: "/" }];
+  const links = [{ title: "home", href: "/blog" }];
 
   const handleClick = () => {
     return null;
@@ -90,23 +91,36 @@ export default function() {
             </div>
           </div>
           <div className="social__share">
-            <span>Share the blog post:</span>
-            <a onClick={handleClick}>
-              <img
-                src="../../static/icons/facebook-2.svg"
-                alt="facebook icon"
-              />
-            </a>
-            <a href="/">
-              <img src="../../static/icons/inkedin-2.svg" alt="linkedin icon" />
-            </a>
-            <a href="/">
-              <img src="../../static/icons/twitter-2.svg" alt="twitter icon" />
-            </a>
+            <span>Share the blog post</span>
+            <div className="social__buttons">
+              <a onClick={handleClick}>
+                <img
+                  src="../../static/icons/facebook-2.svg"
+                  alt="facebook icon"
+                />
+              </a>
+              <a href="/">
+                <img
+                  src="../../static/icons/inkedin-2.svg"
+                  alt="linkedin icon"
+                />
+              </a>
+              <a href="/">
+                <img
+                  src="../../static/icons/twitter-2.svg"
+                  alt="twitter icon"
+                />
+              </a>
+            </div>
             <div className="blog__spc"></div>
           </div>
         </footer>
       </section>
+      <section>
+        <h2>Related blog posts</h2>
+        <div className="card__wrapper"></div>
+      </section>
+      <Footer />
       <style jsx>{`
         main {
           background-color: #f9f9f9;
@@ -219,11 +233,14 @@ export default function() {
         }
         .social__share > span {
           color: #484848;
-          font-size: 1.15rem;
+          font-size: 1.25rem;
           font-weight: 600;
           vertical-align: middle;
         }
-        .social__share > a {
+        .social__buttons {
+          display: inline;
+        }
+        .social__buttons > a {
           margin: 0 .25rem;
         }
         h1 {
@@ -240,6 +257,26 @@ export default function() {
         }
         strong {
           text-transform: capitalize;
+        }
+        @media (max-width: 768px) {
+          .footer__contents {
+            width: 100%;
+          }
+          .profile__text {
+            width: 100%;
+          }
+          .social__share {
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            align-items: center;
+          }
+          .social__share > a {
+            margin: 1rem;
+          }
+          .social__buttons {
+            padding-top: .5rem;
+          }
         }
       `}</style>
     </main>
