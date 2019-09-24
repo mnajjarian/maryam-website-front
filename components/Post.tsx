@@ -106,7 +106,7 @@ const Post = (props: PostProps) => {
           color: #484848;
         }
         h2 {
-          color: black;
+          margin: 0 0 0.5rem 0;
         }
         span {
           color: var(--dark-light);
