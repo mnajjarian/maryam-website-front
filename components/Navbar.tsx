@@ -45,6 +45,7 @@ const Nav = (props: NavProps) => {
             background: #4b6cb7;
             background: -webkit-linear-gradient(to right, #182848, #4b6cb7);
             background: linear-gradient(to right, #182848, #4b6cb7);
+            z-index: 33;
           }
           nav > ul {
             display: flex;
