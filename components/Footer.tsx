@@ -70,6 +70,7 @@ const Footer = () => (
         text-transform: capitalize;
         align-self: flex-end;
         margin: 20px;
+        color: white;
         word-spacing: 3px;
       }
       a {
