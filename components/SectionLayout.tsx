@@ -81,7 +81,7 @@ const SectionLayout = (props: Props) => (
         color: var(--light-french);
       }
       @media (max-width: 768px) {
-        .section {
+        section {
           flex-direction: column;
         }
         .section__content {
