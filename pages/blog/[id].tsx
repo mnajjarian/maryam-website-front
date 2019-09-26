@@ -5,6 +5,7 @@ import db from "../../db.json";
 import Navbar from "../../components/Navbar";
 import Meta from "../../components/meta";
 import Footer from "../../components/Footer";
+import { Fragment } from "react";
 
 export default function() {
   const router = useRouter();
@@ -32,67 +33,46 @@ export default function() {
       <div className="nav__wrapper">
         <Navbar links={links} />
       </div>
-
-      <section className="post">
+      <article>
         <header>
-          <div className="post__date">
-            <time>
-              Published on{" "}
-              {new Intl.DateTimeFormat("en-us", {
-                year: "numeric",
-                month: "long",
-                day: "2-digit"
-              }).format(new Date(post.createdAt))}
-            </time>
-          </div>
+          <time>
+            Published on{" "}
+            {new Intl.DateTimeFormat("en-us", {
+              year: "numeric",
+              month: "long",
+              day: "2-digit"
+            }).format(new Date(post.createdAt))}
+          </time>
           <h1>{post.title}</h1>
           <div className="post__author">
-            <div className="author__image">
-              <img src={post.authorImg} alt="author image" />
-            </div>
-            <div className="author__name">
-              <p>
-                Written by:
-                <br />
-                <strong>{post.author}</strong>
-              </p>
-            </div>
+            <img src={post.authorImg} alt="author image" />
+            <p>
+              Written by:
+              <br />
+              <strong>{post.author}</strong>
+            </p>
           </div>
-          <div className="post__short">
-            <p>{post.shortDescription}</p>
-          </div>
-          <div className="post__image">
-            <img src={post.imgUrl} />
-          </div>
+          <p>{post.shortDescription}</p>
+          <img src={post.imgUrl} />
         </header>
-        <article>
-          <div className="post__body">
-            {post.paragraph.map(p => (
-              <div>
-                <h2>{p.title}</h2>
-                {p.text.map(text => (
-                  <p>{text}</p>
-                ))}
-              </div>
+        {post.paragraph.map(p => (
+          <Fragment>
+            <h2>{p.title}</h2>
+            {p.text.map(text => (
+              <p>{text}</p>
             ))}
-          </div>
-        </article>
+          </Fragment>
+        ))}
         <footer>
-          <div className="footer__contents">
+          <section>
             <h2>About the author</h2>
-            <div className="footer__profile">
-              <div className="profile__image">
-                <img src={post.authorImg} alt="author image" />
-              </div>
-              <div className="profile__text">
-                <p>
-                  <strong>{post.author}</strong>
-                </p>
-                <p></p>
-                <p>{post.authorBio}</p>
-              </div>
-            </div>
-          </div>
+            <img src={post.authorImg} alt="author image" />
+            <p>
+              <strong>{post.author}</strong>
+            </p>
+            <p></p>
+            <p>{post.authorBio}</p>
+          </section>
           <div className="social__share">
             <span>Share the blog post</span>
             <div className="social__buttons">
@@ -103,7 +83,7 @@ export default function() {
             <div className="blog__spc"></div>
           </div>
         </footer>
-      </section>
+      </article>
       <div className="related__posts">
         <h2>Related blog posts</h2>
         <span></span>
@@ -144,7 +124,7 @@ export default function() {
         main {
           background-color: #f9f9f9;
         }
-        section {
+        main > article {
           margin-top: 80px;
           font-family: Merriweather, serif;
           color: #484848;
@@ -160,9 +140,10 @@ export default function() {
           width: 100%;
           padding: .5rem 0;
         }
-        .post__date {
-          margin-top: 0.25rem;
-          margin-bottom: 1rem;
+        header > img {
+          width: 100%;
+        }
+        time {
           font-family: "Lato", sans-serif;
           font-weight: bold;
           font-size: 1.2rem;
@@ -175,75 +156,48 @@ export default function() {
           height: auto;
           width: 100%;
         }
-        .post__image > img {
-          width: 100%;
-          height: auto;
-        }
-        .author__image > img {
+
+        .post__author > img {
           width: 70px;
           height: 70px;
           margin: 0.25rem;
           border-radius: 50%;
         }
 
-        .author__name {
-          display: flex;
-          flex-direction: column;
-          margin: 0 0.25rem;
-        }
-        .post__short {
+        header > p {
           width: 100%;
           margin: 0.25rem 0 0.5rem 0;
-        }
-        .post__short > p {
           font-size: 1.25rem;
           font-weight: 800;
         }
-        .post__body {
-          margin: 0;
-          max-width: 100%;
-        }
-        section > p {
-          font-size: 1.1rem;
-          font-weight: 300 !important;
-          line-height: 200%;
 
-        }
-        .footer__contents {
+        footer > section {
+          text-align: center;
           width: 80%;
           margin: 0 auto;
           padding: 0 1rem;
         }
-        .footer__contents > p {
-          font-size: 1rem;
+    
+        section > p {
+          text-align: left;
+          font-size: 1.1rem;
         }
-        .footer__profile {
-          margin-top: 1rem;
-          margin-bottom: 1rem;
-          height: auto;
-          width: 100%;
+        section > p:nth-child(3) {
+          margin-bottom: .6rem;
+          text-align: center;
         }
-        .profile__image {
+        section > img {
          width: 120px;
          height: 120px;
          margin: .25rem auto 1rem;
+        border-radius: 50%;
         }
-        .profile__image > img {
-          width: 100%;
-          height: 100%;
-          border-radius: 50%;
-        }
-        .profile__text {
+
+        section > p {
           width: 60%;
           margin: 0 auto;
         }
    
-        .profile__text > p:nth-child(1) {
-          text-align: center;
-        }
-        .footer__contents > h2 {
-          text-align: center;
-        }
         .social__share {
           text-align: center;
           width: 100%;
@@ -349,7 +303,7 @@ export default function() {
           text-transform: capitalize;
         }
         @media (max-width: 768px) {
-          .footer__contents {
+          section > p {
             width: 100%;
           }
           .profile__text {

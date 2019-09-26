@@ -12,19 +12,16 @@ type Props = {
 const SectionLayout = (props: Props) => (
   <section>
     <img src={props.imgUrl} />
-    <div className="section__content">
+    <article>
       <h2>{props.title}</h2>
       <span></span>
       <p>{props.text}</p>
-      <div className="section__button">
+      <div>
         <a href={props.href}>{props.btnText}</a>
       </div>
-    </div>
+    </article>
     <style jsx>{`
       section {
-        background: url("../static/images/Light-blue.jpg") no-repeat center
-          center fixed;
-        background-size: cover;
         display: flex;
         flex-direction: ${props.flexDirect};
         justify-content: center;
@@ -32,6 +29,10 @@ const SectionLayout = (props: Props) => (
         width: 100%;
         min-height: 100vh;
         color: var(--main-dark-color);
+        background: url("../static/images/Light-blue.jpg") fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
       }
       img {
         height: 400px;
@@ -39,22 +40,28 @@ const SectionLayout = (props: Props) => (
         border-radius: ${props.borderRadius};
         padding: 40px;
       }
-      .section__content {
+      article {
         width: 40%;
       }
-      .section__content > h2 {
+      h2 {
         margin: 0;
         text-transform: capitalize;
       }
 
-      .section__content > span {
+      p {
+        line-height: 1.65;
+        letter-spacing: 0.1px;
+        font-size: 1.1rem;
+      }
+
+      span {
         display: block;
         margin-bottom: 10px;
         width: 116px;
         height: 5px;
         border-top: 2px solid rgba(39, 34, 62, 1);
       }
-      .section__button {
+      div {
         height: 40px;
         min-height: 19px;
         width: 142px;
@@ -67,24 +74,24 @@ const SectionLayout = (props: Props) => (
         justify-content: center;
         align-items: center;
       }
-      .section__button > a {
+      a {
         text-decoration: none;
         text-transform: capitalize;
         font-size: 1rem;
         white-space: nowrap;
         color: initial;
       }
-      .section__button:hover {
+      div:hover {
         border-color: var(--light-french);
       }
-      .section__button:hover a {
+      div:hover a {
         color: var(--light-french);
       }
       @media (max-width: 768px) {
         section {
           flex-direction: column;
         }
-        .section__content {
+        article {
           width: 100%;
           margin: 0 auto;
           padding: 20px;

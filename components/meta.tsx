@@ -62,8 +62,8 @@ const Meta = () => (
         font-size: 3.5rem;
         font-weight: 700;
         line-height: 1.3;
-        margin-top: 0;
-        margin-bottom: 0.25rem;
+        //margin-top: 0;
+        //margin-bottom: 0.25rem;
         font-family: Montserrat, Sans-serif;
       }
       h2 {

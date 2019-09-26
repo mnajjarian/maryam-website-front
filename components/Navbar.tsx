@@ -17,74 +17,77 @@ type NavProps = {
 const Nav = (props: NavProps) => {
   const { toggle, links } = props;
   return (
-    <div id="section">
-      <nav
-        id="nav"
-        className={classNames({
-          show: !toggle
-        })}
-      >
-        <ul>
-          {links.map(link => (
-            <Link href={link.href} key={link.title}>
+    <nav
+      id="nav"
+      className={classNames({
+        show: !toggle
+      })}
+    >
+      <ul>
+        {links.map(link => (
+          <Link href={link.href} key={link.title}>
+            <li>
               <a>{link.title}</a>
-            </Link>
-          ))}
-        </ul>
-        <style jsx>{`
+            </li>
+          </Link>
+        ))}
+      </ul>
+      <style jsx>{`
+        .sticky {
+          position: fixed;
+          top: 0;
+        }
+        nav {
+          display: flex;
+          align-items: center;
+          width: 100%;
+          height: 50px;
+          background: #4b6cb7;
+          background: -webkit-linear-gradient(to right, #182848, #4b6cb7);
+          background: linear-gradient(to right, #182848, #4b6cb7);
+          z-index: 33;
+        }
+        ul {
+          list-style: none;
+          display: flex;
+          align-items: center;
+        }
+
+        a {
+          text-decoration: none;
+          text-transform: capitalize;
+          color: white;
+          padding: 8px 16px;
+          font-size: 1rem;
+          cursor: pointer;
+        }
+        a:hover {
+          color: #d1cc73;
+        }
+        @media (max-width: 768px) {
+          .show {
+            display: none;
+          }
           .sticky {
-            position: fixed;
-            top: 0;
+            display: none;
           }
           nav {
-            display: flex;
-            align-items: center;
-            width: 100%;
-            height: 50px;
-            background: #4b6cb7;
-            background: -webkit-linear-gradient(to right, #182848, #4b6cb7);
-            background: linear-gradient(to right, #182848, #4b6cb7);
-            z-index: 33;
+            justify-content: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 30%;
+            height: 300px;
           }
-          ul {
-            display: flex;
-            align-items: center;
-          }
-          a {
-            text-decoration: none;
-            text-transform: capitalize;
-            color: white;
-            padding: 8px 16px;
-            font-size: 1rem;
-          }
-          a:hover {
-            color: #d1cc73;
-          }
-          @media (max-width: 768px) {
-            .show {
-              display: none;
-            }
-            .sticky {
-              display: none;
-            }
-            nav {
-              justify-content: center;
-              position: absolute;
-              top: 0;
-              left: 0;
-              width: 30%;
-              height: 300px;
-            }
 
-            ul {
-              padding: 0;
-              flex-direction: column;
-              align-items: flex-start;
-            }
+          ul {
+            padding: 0;
+            flex-direction: column;
+            align-items: flex-start;
           }
-        `}</style>
-      </nav>
-    </div>
+        }
+      `}</style>
+    </nav>
   );
 };
 const Navbar = (props: NavbarProps) => {
