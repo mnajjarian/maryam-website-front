@@ -20,7 +20,7 @@ const BlogHeader = (props: Props) => {
       <div className="header__content">
         <div className="header__items">
           <h2>{title}</h2>
-          <p>{paragraph[0].text[0].substring(0, 350)}...</p>
+          <p>{paragraph[0].text[0].substring(0, 320)}...</p>
           <span>
             {new Intl.DateTimeFormat("en-us", {
               year: "numeric",
@@ -82,6 +82,11 @@ const BlogHeader = (props: Props) => {
           .header__content {
             flex-direction: column-reverse;
             justify-content: space-around;
+          }
+
+          .header__items > p {
+            font-size: 1rem;
+            line-height: 1.5;
           }
           .header__img {
             width: 100%;

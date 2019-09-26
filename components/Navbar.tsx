@@ -19,9 +19,8 @@ const Nav = (props: NavProps) => {
   return (
     <div id="section">
       <nav
-        id="myHeader"
+        id="nav"
         className={classNames({
-          nav__wrapper: true,
           show: !toggle
         })}
       >
@@ -47,7 +46,7 @@ const Nav = (props: NavProps) => {
             background: linear-gradient(to right, #182848, #4b6cb7);
             z-index: 33;
           }
-          nav > ul {
+          ul {
             display: flex;
             align-items: center;
           }
@@ -77,7 +76,7 @@ const Nav = (props: NavProps) => {
               height: 300px;
             }
 
-            nav > ul {
+            ul {
               padding: 0;
               flex-direction: column;
               align-items: flex-start;
@@ -91,13 +90,13 @@ const Nav = (props: NavProps) => {
 const Navbar = (props: NavbarProps) => {
   const [toggle, setToggle] = React.useState(false);
   React.useEffect(() => {
-    const header = document.getElementById("myHeader");
-    const sticky = header.offsetTop;
+    const nav = document.getElementById("nav");
+    const sticky = nav.offsetTop;
     const scrollCallBack = window.addEventListener("scroll", () => {
       if (window.pageYOffset > sticky) {
-        header.classList.add("sticky");
+        nav.classList.add("sticky");
       } else {
-        header.classList.remove("sticky");
+        nav.classList.remove("sticky");
       }
     }) as any;
     return () => {
@@ -106,7 +105,10 @@ const Navbar = (props: NavbarProps) => {
   }, []);
   return (
     <div>
-      <Nav toggle={toggle} links={props.links} />
+      <div className="nav__wrapper">
+        <Nav toggle={toggle} links={props.links} />
+      </div>
+
       <div
         className={classNames({
           menu__button: true,
@@ -154,6 +156,7 @@ const Navbar = (props: NavbarProps) => {
         @media (max-width: 768px) {
           .menu__button {
             display: block;
+            z-index: 44;
           }
         }
       `}</style>

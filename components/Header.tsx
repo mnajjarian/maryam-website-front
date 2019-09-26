@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import Navbar from "./Navbar";
 
 const links = [
@@ -7,9 +8,9 @@ const links = [
 ];
 const Header = () => {
   return (
-    <div className="header">
+    <Fragment>
       <header>
-        <div className="header__content">
+        <div>
           <h1>
             <a href="/">maryam tavakkoli</a>
           </h1>
@@ -20,9 +21,6 @@ const Header = () => {
         <Navbar links={links} />
       </div>
       <style jsx>{`
-        .nav__wrapper {
-          height: 50px;
-        }
         header {
           display: flex;
           align-items: center;
@@ -35,17 +33,17 @@ const Header = () => {
           background-repeat: no-repeat;
           background-size: cover;
         }
-        .header__content {
+        header > div {
           display: flex;
           flex-direction: column;
           justify-content: center;
           align-items: center;
           color: var(--main-dark-color);
         }
-        .header__content > h1 {
+        h1 {
           margin: 0;
         }
-        h1 > a {
+        a {
           text-decoration: none;
           padding: 0;
           font: italic normal normal 45px/1.4em "times new roman", times, serif;
@@ -53,7 +51,7 @@ const Header = () => {
           text-transform: capitalize;
           color: var(--main-dark-color);
         }
-        .header__content > span {
+        span {
           padding: 0;
           font-size: 13px;
           text-transform: uppercase;
@@ -67,12 +65,12 @@ const Header = () => {
           header {
             height: 300px;
           }
-          h1 > a {
+          a {
             font-size: 1.5rem;
           }
         }
       `}</style>
-    </div>
+    </Fragment>
   );
 };
 

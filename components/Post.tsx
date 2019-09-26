@@ -191,6 +191,7 @@ const Post = (props: PostProps) => {
             display: flex;
             flex-direction: column-reverse;
           }
+
           .blog__items > img {
             width: 100%;
           }

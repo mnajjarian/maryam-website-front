@@ -12,10 +12,13 @@ const Meta = () => (
       />
     </Head>
     <style jsx global>{`
-      *,
-      *:before,
-      *:after {
+      html {
         box-sizing: border-box;
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: inherit;
       }
       :root {
         --dark-light: #777;
@@ -24,6 +27,7 @@ const Meta = () => (
         --light-french: #d1b873;
         --blog-bg-color: #ff8300;
       }
+
       body {
         margin: 0;
         padding: 0;
