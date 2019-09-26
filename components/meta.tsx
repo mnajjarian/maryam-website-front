@@ -1,10 +1,13 @@
-import Head from "next/head";
+import Head from 'next/head';
 
 const Meta = () => (
   <div>
     <Head>
       <title>Maryam Tavakkoli</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+      />
       <meta charSet="utf-8" />
       <link
         href="https://fonts.googleapis.com/css?family=Lato%7CMerriweather%7CMontserrat%7COpen+Sans&display=swap"
@@ -31,7 +34,7 @@ const Meta = () => (
       body {
         margin: 0;
         padding: 0;
-        //background: #000046;
+        background: #000046;
         color: #0b0500;
         height: 100vh;
         font-size: 16px;
