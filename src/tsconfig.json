@@ -14,6 +14,11 @@
     "isolatedModules": true,
     "jsx": "preserve"
   },
-  "exclude": ["node_modules", "./api.ts", "./server.ts"],
+  "exclude": [
+    "node_modules",
+    "./api.ts",
+    "./server.ts",
+    "./auth-routes.ts"
+  ],
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
 }

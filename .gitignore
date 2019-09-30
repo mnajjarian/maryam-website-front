@@ -3,10 +3,11 @@
 # development
 .eslintrc.js
 # production
-/out
+./src/out
 /build
-/.next
-/.next-export
+.next
+/src/.next
+/src/.next-export
 .env
 # misc
 .DS_Store

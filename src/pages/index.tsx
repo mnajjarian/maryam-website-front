@@ -1,5 +1,6 @@
 import Biography from '../components/Biography';
 import Layout from '../components/Layout';
+import Index from './about';
 
 const IndexPage = () => (
   <Layout>
