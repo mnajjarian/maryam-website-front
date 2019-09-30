@@ -6,8 +6,8 @@
 ./src/out
 /build
 .next
-/src/.next
-/src/.next-export
+**/.next
+**/.next-export
 .env
 # misc
 .DS_Store
