@@ -14,7 +14,7 @@
     "dev": "node ./src/server.ts",
     "build": "next build ./src",
     "start": "NODE_ENV=production node ./src/server.ts",
-    "deploy": "yarn build && next start",
+    "deploy": "next build && next start",
     "test": "jest",
     "test:watch": "jest -watch",
     "test:coverage": "jest -coverage",
