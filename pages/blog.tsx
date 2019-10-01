@@ -5,12 +5,13 @@ import Meta from '../components/meta';
 import BlogHeader from '../components/BlogHeader';
 import BlogPost from '../components/BlogPost';
 import Footer from '../components/Footer';
+import posts from '../db.json';
 
 const links = [
   { title: 'Home', href: '/blog' },
   { title: 'About', href: '/about' },
 ];
-const Blog = ({ posts }) => (
+const Blog = () => (
   <React.Fragment>
     <Meta />
     <Navbar links={links} />
@@ -20,11 +21,11 @@ const Blog = ({ posts }) => (
   </React.Fragment>
 );
 
-Blog.getInitialProps = async ({ req }) => {
+/* Blog.getInitialProps = async ({ req }) => {
   const baseUrl = req ? `${req.protocol}://${req.get('Host')}` : '';
   const res = await fetch(`${baseUrl}/api/posts`);
   return {
     posts: await res.json(),
   };
-};
+}; */
 export default Blog;

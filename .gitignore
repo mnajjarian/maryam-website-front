@@ -3,12 +3,12 @@
 # development
 .eslintrc.js
 .prettierrc
+.vscode
 # production
-./src/out
-/build
+src/out
+build
 .next
-**/.next
-**/.next-export
+.next-export
 .env
 # misc
 .DS_Store
