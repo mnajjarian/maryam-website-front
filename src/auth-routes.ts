@@ -14,7 +14,7 @@ router.get(
   passport.authenticate('auth0', {
     scope: 'openid email profile',
   }),
-  (req, res) => res.redirect('/'),
+  (req, res) => res.redirect('/dashboard'),
 );
 
 router.get('/callback', (req, res, next) => {
@@ -23,7 +23,7 @@ router.get('/callback', (req, res, next) => {
     if (!user) return res.redirect('/login');
     req.login(user, err => {
       if (err) return next(err);
-      res.redirect('/');
+      res.redirect('/dashboard');
     });
   })(req, res, next);
 });

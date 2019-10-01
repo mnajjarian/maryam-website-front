@@ -14,10 +14,12 @@
     "dev": "node ./src/server.ts",
     "build": "next build ./src",
     "start": "NODE_ENV=production node ./src/server.ts",
-    "export": "next build && next export",
+    "export": "next export ./src",
+    "deploy": "yarn build && yarn export",
     "test": "jest",
     "test:watch": "jest -watch",
     "test:coverage": "jest -coverage",
+    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"{gatsby-*.js,src/**/*.js}\"",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
   },

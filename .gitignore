@@ -2,6 +2,7 @@
 /node_modules
 # development
 .eslintrc.js
+.prettierrc
 # production
 ./src/out
 /build
