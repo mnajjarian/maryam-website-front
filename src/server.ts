@@ -9,6 +9,13 @@ const uid = require('uid-safe');
 const authRoutes = require('./auth-routes.ts');
 const blogAPI = require('./api.ts');
 
+const devProxy = {
+  '/.netlify': {
+    target: 'http://localhost:9000',
+    pathRewrite: { '^/.netlify/functions': '' },
+  },
+};
+
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({
   dev,
@@ -20,6 +27,12 @@ const handle = app.getRequestHandler();
 app.prepare().then(() => {
   const server = express();
 
+  if (dev && devProxy) {
+    const proxyMiddleware = require('http-proxy-middleware');
+    Object.keys(devProxy).forEach(function(context) {
+      server.use(proxyMiddleware(context, devProxy[context]));
+    });
+  }
   const sessionConfig = {
     secret: uid.sync(18),
     cookie: {
