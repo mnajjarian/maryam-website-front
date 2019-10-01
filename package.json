@@ -46,6 +46,7 @@
     "passport-auth0": "^1.2.1",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
+    "react-ssr-prepass": "^1.0.7",
     "uid-safe": "^2.1.5"
   },
   "devDependencies": {
