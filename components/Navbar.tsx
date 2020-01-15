@@ -1,6 +1,6 @@
-import * as React from "react";
-import classNames from "classnames";
-import Link from "next/link";
+import * as React from 'react';
+import classNames from 'classnames';
+import Link from 'next/link';
 
 type LinkType = {
   title: string;
@@ -20,7 +20,7 @@ const Nav = (props: NavProps) => {
     <nav
       id="nav"
       className={classNames({
-        show: !toggle
+        show: !toggle,
       })}
     >
       <ul>
@@ -43,7 +43,11 @@ const Nav = (props: NavProps) => {
           width: 100%;
           height: 50px;
           background: #4b6cb7;
-          background: -webkit-linear-gradient(to right, #182848, #4b6cb7);
+          background: -webkit-linear-gradient(
+            to right,
+            #182848,
+            #4b6cb7
+          );
           background: linear-gradient(to right, #182848, #4b6cb7);
           z-index: 33;
         }
@@ -93,17 +97,17 @@ const Nav = (props: NavProps) => {
 const Navbar = (props: NavbarProps) => {
   const [toggle, setToggle] = React.useState(false);
   React.useEffect(() => {
-    const nav = document.getElementById("nav");
+    const nav = document.getElementById('nav');
     const sticky = nav.offsetTop;
-    const scrollCallBack = window.addEventListener("scroll", () => {
+    const scrollCallBack = window.addEventListener('scroll', () => {
       if (window.pageYOffset > sticky) {
-        nav.classList.add("sticky");
+        nav.classList.add('sticky');
       } else {
-        nav.classList.remove("sticky");
+        nav.classList.remove('sticky');
       }
     }) as any;
     return () => {
-      window.removeEventListener("scroll", scrollCallBack) as any;
+      window.removeEventListener('scroll', scrollCallBack) as any;
     };
   }, []);
   return (
@@ -115,7 +119,7 @@ const Navbar = (props: NavbarProps) => {
       <div
         className={classNames({
           menu__button: true,
-          change: toggle
+          change: toggle,
         })}
         onClick={() => setToggle(!toggle)}
       >
